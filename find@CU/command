@@ -1,0 +1,15 @@
+python3 fingerprinting.py -l "carleton" -u "Chris Hsu" -g "test" -s "finddemo.duckdns.org" -c 1000 -r learn
+python3 fingerprinting.py -l "carleton" -u "Chris Hsu" -g "test" -s "finddemo.duckdns.org" -c 100 -r learn
+python3 fingerprinting.py -l "joe cafe" -u "Chris Hsu" -g "test" -s "160.39.226.204" -p 8888 -c 100 -r learn
+
+python3 fingerprinting.py -l "Eng Lib test" -u "Chris Hsu" -g "test" -s "160.39.226.204" -p 8888 -c 100 -r learn
+
+
+160.39.226.204:8888
+
+python3 fingerprinting.py -u "Chris Hsu" -g "test" -s "127.0.0.1" -p 8888 -c 100 -r track
+
+python3 fingerprinting.py -u "Chris Hsu" -g "test" -s "160.39.226.204" -p 8888 -c 100 -r track
+
+
+python3 fingerprinting.py -u "Chris Hsu" -g "test" -s "finddemo.duckdns.org" -p 8888 -c 100 -r track
