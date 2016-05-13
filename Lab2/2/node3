@@ -1,0 +1,62 @@
+[  5] local 10.43.4.3 port 5001 connected with 10.43.4.200 port 54099
+[  5]  0.0- 1.0 sec   296 KiBytes  2.43 Mbits/sec
+[  5]  1.0- 2.0 sec   370 KiBytes  3.03 Mbits/sec
+[  5]  2.0- 3.0 sec   219 KiBytes  1.79 Mbits/sec
+[  5]  3.0- 4.0 sec   358 KiBytes  2.93 Mbits/sec
+[  5]  0.0- 4.7 sec  1.50 MiBytes  2.68 Mbits/sec
+[  4] local 10.43.4.3 port 5001 connected with 10.43.4.200 port 54103
+[  4]  0.0- 1.0 sec   293 KiBytes  2.40 Mbits/sec
+[  4]  1.0- 2.0 sec   429 KiBytes  3.52 Mbits/sec
+[  4]  2.0- 3.0 sec   242 KiBytes  1.98 Mbits/sec
+[  4]  3.0- 4.0 sec   382 KiBytes  3.13 Mbits/sec
+[  4]  0.0- 4.7 sec  1.62 MiBytes  2.88 Mbits/sec
+[  5] local 10.43.4.3 port 5001 connected with 10.43.4.200 port 54107
+[  5]  0.0- 1.0 sec   315 KiBytes  2.58 Mbits/sec
+[  5]  1.0- 2.0 sec   321 KiBytes  2.63 Mbits/sec
+[  5]  2.0- 3.0 sec   217 KiBytes  1.78 Mbits/sec
+[  5]  3.0- 4.0 sec   374 KiBytes  3.06 Mbits/sec
+[  5]  0.0- 4.7 sec  1.50 MiBytes  2.67 Mbits/sec
+[  4] local 10.43.4.3 port 5001 connected with 10.43.4.200 port 54111
+[  4]  0.0- 1.0 sec   315 KiBytes  2.58 Mbits/sec
+[  4]  1.0- 2.0 sec   427 KiBytes  3.49 Mbits/sec
+[  4]  2.0- 3.0 sec   433 KiBytes  3.55 Mbits/sec
+[  4]  3.0- 4.0 sec   319 KiBytes  2.61 Mbits/sec
+[  4]  4.0- 5.0 sec   213 KiBytes  1.75 Mbits/sec
+[  4]  0.0- 5.5 sec  1.75 MiBytes  2.68 Mbits/sec
+[  5] local 10.43.4.3 port 5001 connected with 10.43.4.200 port 54116
+[  5]  0.0- 1.0 sec   326 KiBytes  2.67 Mbits/sec
+[  5]  1.0- 2.0 sec   433 KiBytes  3.55 Mbits/sec
+[  5]  2.0- 3.0 sec   405 KiBytes  3.32 Mbits/sec
+[  5]  3.0- 4.0 sec   219 KiBytes  1.79 Mbits/sec
+[  5]  0.0- 4.7 sec  1.62 MiBytes  2.87 Mbits/sec
+[  4] local 10.43.4.3 port 5001 connected with 10.43.4.200 port 54120
+[  4]  0.0- 1.0 sec   301 KiBytes  2.47 Mbits/sec
+[  4]  1.0- 2.0 sec   433 KiBytes  3.55 Mbits/sec
+[  4]  2.0- 3.0 sec   433 KiBytes  3.55 Mbits/sec
+[  4]  3.0- 4.0 sec   434 KiBytes  3.56 Mbits/sec
+[  4]  4.0- 5.0 sec   271 KiBytes  2.22 Mbits/sec
+[  4]  0.0- 5.6 sec  1.88 MiBytes  2.81 Mbits/sec
+[  5] local 10.43.4.3 port 5001 connected with 10.43.4.200 port 54124
+[  5]  0.0- 1.0 sec   321 KiBytes  2.63 Mbits/sec
+[  5]  1.0- 2.0 sec   433 KiBytes  3.55 Mbits/sec
+[  5]  2.0- 3.0 sec   433 KiBytes  3.55 Mbits/sec
+[  5]  3.0- 4.0 sec   433 KiBytes  3.54 Mbits/sec
+[  5]  0.0- 5.0 sec  1.88 MiBytes  3.16 Mbits/sec
+[  4] local 10.43.4.3 port 5001 connected with 10.43.4.200 port 54157
+[  4]  0.0- 1.0 sec   321 KiBytes  2.63 Mbits/sec
+[  4]  1.0- 2.0 sec   433 KiBytes  3.55 Mbits/sec
+[  4]  2.0- 3.0 sec   433 KiBytes  3.55 Mbits/sec
+[  4]  3.0- 4.0 sec   433 KiBytes  3.55 Mbits/sec
+[  4]  0.0- 4.9 sec  1.88 MiBytes  3.18 Mbits/sec
+[  5] local 10.43.4.3 port 5001 connected with 10.43.4.200 port 54167
+[  5]  0.0- 1.0 sec   278 KiBytes  2.28 Mbits/sec
+[  5]  1.0- 2.0 sec   433 KiBytes  3.55 Mbits/sec
+[  5]  2.0- 3.0 sec   353 KiBytes  2.89 Mbits/sec
+[  5]  3.0- 4.0 sec   282 KiBytes  2.31 Mbits/sec
+[  5]  0.0- 4.7 sec  1.62 MiBytes  2.87 Mbits/sec
+[  4] local 10.43.4.3 port 5001 connected with 10.43.4.200 port 54171
+[  4]  0.0- 1.0 sec   309 KiBytes  2.53 Mbits/sec
+[  4]  1.0- 2.0 sec   294 KiBytes  2.40 Mbits/sec
+[  4]  2.0- 3.0 sec   219 KiBytes  1.79 Mbits/sec
+[  4]  3.0- 4.0 sec   369 KiBytes  3.02 Mbits/sec
+[  4]  0.0- 4.5 sec  1.38 MiBytes  2.56 Mbits/sec

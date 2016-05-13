@@ -1,0 +1,388 @@
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.5 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.5, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 47579 connected with 10.43.4.5 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.2 sec  4.88 MBytes  9.79 Mbits/sec
+geni-ch3141@witestlab:~$ # to node3
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.3 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.3, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 54227 connected with 10.43.4.3 port 5001
+
+^[[1;9C[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 7.2 sec   512 KBytes   585 Kbits/sec
+geni-ch3141@witestlab:~$ # to node4
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.4 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.4, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50571 connected with 10.43.4.4 port 5001
+
+
+
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.2 sec  2.50 MBytes  5.03 Mbits/sec
+geni-ch3141@witestlab:~$ # to node7
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.7 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.7, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50361 connected with 10.43.4.7 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.2 sec  2.25 MBytes  4.46 Mbits/sec
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$ C
+Sorry, command-not-found has crashed! Please file a bug report at:
+https://bugs.launchpad.net/command-not-found/+filebug
+Please include the following information with the report:
+
+command-not-found version: 0.2.44
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$ # to node5
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.5 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.5, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 47583 connected with 10.43.4.5 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.1 sec  4.88 MBytes  9.94 Mbits/sec
+geni-ch3141@witestlab:~$ # to node3
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.3 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.3, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 54231 connected with 10.43.4.3 port 5001
+^[[1;9C[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 6.8 sec   384 KBytes   462 Kbits/sec
+geni-ch3141@witestlab:~$ # to node4
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.4 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.4, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50589 connected with 10.43.4.4 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.1 sec  1.50 MBytes  2.45 Mbits/sec
+geni-ch3141@witestlab:~$ # to node7
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.7 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.7, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50379 connected with 10.43.4.7 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.3 sec  2.25 MBytes  4.42 Mbits/sec
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$ C
+Sorry, command-not-found has crashed! Please file a bug report at:
+https://bugs.launchpad.net/command-not-found/+filebug
+Please include the following information with the report:
+
+command-not-found version: 0.2.44
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$ # to node5
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.5 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.5, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 47601 connected with 10.43.4.5 port 5001
+
+
+
+
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.1 sec  4.88 MBytes  9.91 Mbits/sec
+geni-ch3141@witestlab:~$ # to node3
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.3 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.3, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 54249 connected with 10.43.4.3 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.6 sec   512 KBytes   755 Kbits/sec
+geni-ch3141@witestlab:~$ # to node4
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.4 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.4, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50593 connected with 10.43.4.4 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 6.1 sec   384 KBytes   517 Kbits/sec
+geni-ch3141@witestlab:~$ # to node7
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.7 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.7, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50383 connected with 10.43.4.7 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.3 sec  2.25 MBytes  4.44 Mbits/sec
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$ # to node5
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.5 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.5, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 47606 connected with 10.43.4.5 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.2 sec  5.00 MBytes  9.95 Mbits/sec
+geni-ch3141@witestlab:~$ # to node3
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.3 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.3, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 54254 connected with 10.43.4.3 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 6.6 sec   512 KBytes   640 Kbits/sec
+geni-ch3141@witestlab:~$ # to node4
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.4 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.4, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50598 connected with 10.43.4.4 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.8 sec   512 KBytes   882 Kbits/sec
+geni-ch3141@witestlab:~$ # to node7
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.7 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.7, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50388 connected with 10.43.4.7 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.5 sec  1.38 MBytes  2.55 Mbits/sec
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$ # to node5
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.5 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.5, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 47610 connected with 10.43.4.5 port 5001
+
+
+
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.1 sec  4.75 MBytes  9.60 Mbits/sec
+geni-ch3141@witestlab:~$ # to node3
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.3 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.3, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 54258 connected with 10.43.4.3 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 7.8 sec   640 KBytes   671 Kbits/sec
+geni-ch3141@witestlab:~$ # to node4
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.4 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.4, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50602 connected with 10.43.4.4 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.4 sec  1.12 MBytes  2.14 Mbits/sec
+geni-ch3141@witestlab:~$ # to node7
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.7 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.7, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50392 connected with 10.43.4.7 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.4 sec  1.88 MBytes  3.59 Mbits/sec
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$ # to node5
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.5 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.5, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 47614 connected with 10.43.4.5 port 5001
+
+
+
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.1 sec  4.88 MBytes  9.89 Mbits/sec
+geni-ch3141@witestlab:~$ # to node3
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.3 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.3, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 54262 connected with 10.43.4.3 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 6.0 sec   768 KBytes  1.05 Mbits/sec
+geni-ch3141@witestlab:~$ # to node4
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.4 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.4, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50606 connected with 10.43.4.4 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.3 sec  1.88 MBytes  3.64 Mbits/sec
+geni-ch3141@witestlab:~$ # to node7
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.7 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.7, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50396 connected with 10.43.4.7 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 6.4 sec  1.12 MBytes  1.48 Mbits/sec
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$ # to node5
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.5 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.5, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 47618 connected with 10.43.4.5 port 5001
+
+
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.2 sec  5.00 MBytes  10.1 Mbits/sec
+geni-ch3141@witestlab:~$ # to node3
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.3 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.3, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 54266 connected with 10.43.4.3 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.9 sec   640 KBytes   889 Kbits/sec
+geni-ch3141@witestlab:~$ # to node4
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.4 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.4, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50610 connected with 10.43.4.4 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.6 sec  1.50 MBytes  2.75 Mbits/sec
+geni-ch3141@witestlab:~$ # to node7
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.7 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.7, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50400 connected with 10.43.4.7 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.2 sec   640 KBytes  1000 Kbits/sec
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$ # to node5
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.5 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.5, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 47622 connected with 10.43.4.5 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.2 sec  4.88 MBytes  9.85 Mbits/sec
+geni-ch3141@witestlab:~$ # to node3
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.3 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.3, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 54270 connected with 10.43.4.3 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.4 sec   896 KBytes  1.68 Mbits/sec
+geni-ch3141@witestlab:~$ # to node4
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.4 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.4, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50614 connected with 10.43.4.4 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.4 sec  1.50 MBytes  2.87 Mbits/sec
+geni-ch3141@witestlab:~$ # to node7
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.7 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.7, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50404 connected with 10.43.4.7 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 7.4 sec   640 KBytes   711 Kbits/sec
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$
+geni-ch3141@witestlab:~$ # to node5
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.5 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.5, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 47627 connected with 10.43.4.5 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.1 sec  4.75 MBytes  9.72 Mbits/sec
+geni-ch3141@witestlab:~$ # to node3
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.3 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.3, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 54275 connected with 10.43.4.3 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.3 sec  1.50 MBytes  2.91 Mbits/sec
+geni-ch3141@witestlab:~$ # to node4
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.4 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.4, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50619 connected with 10.43.4.4 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 4.3 sec  1.38 MBytes  2.67 Mbits/sec
+geni-ch3141@witestlab:~$ # to node7
+geni-ch3141@witestlab:~$ iperf -c 10.43.4.7 -t 4
+------------------------------------------------------------
+Client connecting to 10.43.4.7, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.43.4.200 port 50409 connected with 10.43.4.7 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.1 sec   512 KBytes   826 Kbits/sec

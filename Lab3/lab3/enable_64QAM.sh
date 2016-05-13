@@ -1,0 +1,1 @@
+wget -qO- "http://wimaxrf:5052/wimaxrf/bs/dlprofile?dlprof1=13&dlprof2=15&dlprof3=16&dlprof4=17&dlprof5=18&dlprof6=19&dlprof7=20&dlprof8=21"

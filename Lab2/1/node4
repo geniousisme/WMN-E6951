@@ -1,0 +1,65 @@
+root@node4:~# iperf -s -i 1
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KiByte (default)
+------------------------------------------------------------
+[  4] local 10.43.4.4 port 5001 connected with 10.43.4.200 port 50410
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0- 1.0 sec   777 KiBytes  6.36 Mbits/sec
+[  4]  1.0- 2.0 sec  1.27 MiBytes  10.7 Mbits/sec
+[  4]  2.0- 3.0 sec   611 KiBytes  5.00 Mbits/sec
+[  4]  3.0- 4.0 sec  1002 KiBytes  8.21 Mbits/sec
+[  4]  0.0- 4.2 sec  3.88 MiBytes  7.72 Mbits/sec
+
+
+7.59
+
+
+
+[  4] local 10.43.4.4 port 5001 connected with 10.43.4.200 port 46567
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0- 1.0 sec   536 KiBytes  4.39 Mbits/sec
+[  4]  1.0- 2.0 sec   870 KiBytes  7.13 Mbits/sec
+[  4]  2.0- 3.0 sec   869 KiBytes  7.12 Mbits/sec
+[  4]  3.0- 4.0 sec   868 KiBytes  7.11 Mbits/sec
+[  4]  0.0- 4.5 sec  3.50 MiBytes  6.51 Mbits/sec
+0
+
+
+[  5] local 10.43.4.4 port 5001 connected with 10.43.4.200 port 50414
+[  5]  0.0- 1.0 sec   104 KiBytes   852 Kbits/sec
+[  5]  1.0- 2.0 sec   105 KiBytes   863 Kbits/sec
+[  5]  2.0- 3.0 sec  0.00 Bytes  0.00 bits/sec
+[  5]  3.0- 4.0 sec  0.00 Bytes  0.00 bits/sec
+[  5]  4.0- 5.0 sec  0.00 Bytes  0.00 bits/sec
+[  5]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  5]  6.0- 7.0 sec  7.90 KiBytes  64.7 Kbits/sec
+[  5]  7.0- 8.0 sec   118 KiBytes   971 Kbits/sec
+[  5]  8.0- 9.0 sec   132 KiBytes  1.08 Mbits/sec
+[  5]  0.0- 9.2 sec   512 KiBytes   455 Kbits/sec
+
+
+[  4] local 10.43.4.4 port 5001 connected with 10.43.4.200 port 50420
+[  4]  0.0- 1.0 sec  97.4 KiBytes   798 Kbits/sec
+[  4]  1.0- 2.0 sec   129 KiBytes  1.06 Mbits/sec
+[  4]  2.0- 3.0 sec   154 KiBytes  1.26 Mbits/sec
+[  4]  3.0- 4.0 sec   312 KiBytes  2.56 Mbits/sec
+[  4]  0.0- 4.4 sec   896 KiBytes  1.69 Mbits/sec
+[  5] local 10.43.4.4 port 5001 connected with 10.43.4.200 port 50424
+[  5]  0.0- 1.0 sec   212 KiBytes  1.74 Mbits/sec
+[  5]  1.0- 2.0 sec   247 KiBytes  2.03 Mbits/sec
+[  5]  2.0- 3.0 sec   332 KiBytes  2.72 Mbits/sec
+[  5]  3.0- 4.0 sec   440 KiBytes  3.60 Mbits/sec
+[  5]  0.0- 4.3 sec  1.38 MiBytes  2.70 Mbits/sec
+[  4] local 10.43.4.4 port 5001 connected with 10.43.4.200 port 50428
+[  4]  0.0- 1.0 sec   228 KiBytes  1.87 Mbits/sec
+[  4]  1.0- 2.0 sec   376 KiBytes  3.08 Mbits/sec
+[  4]  2.0- 3.0 sec   407 KiBytes  3.33 Mbits/sec
+[  4]  3.0- 4.0 sec   490 KiBytes  4.02 Mbits/sec
+[  4]  0.0- 4.4 sec  1.75 MiBytes  3.31 Mbits/sec
+[  5] local 10.43.4.4 port 5001 connected with 10.43.4.200 port 50432
+[  5]  0.0- 1.0 sec   251 KiBytes  2.06 Mbits/sec
+[  5]  1.0- 2.0 sec   333 KiBytes  2.73 Mbits/sec
+[  5]  2.0- 3.0 sec   375 KiBytes  3.07 Mbits/sec
+[  5]  3.0- 4.0 sec   404 KiBytes  3.31 Mbits/sec
+[  5]  0.0- 4.4 sec  1.50 MiBytes  2.86 Mbits/sec
