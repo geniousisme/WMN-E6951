@@ -259,6 +259,28 @@ def classification_html():
 
         return render_template('classification.html',data=data)
 
+@app.route("/cu_map.html")
+def cu_map_html():
+    try:
+        group = flask_login.current_user.id
+    except:
+        return redirect(url_for('login'))
+    logger = logging.getLogger('routing-classification_html')
+    if request.method == 'GET':
+        message = request.args.get('message')
+        if message == None:
+            message = 'Logged in as ' + group
+
+        data = {}
+        data['address'] = builtins.ADDRESS
+        data['group'] = group
+        data['locations'] = getAllLocations(group)
+        if len(message)>0:
+            data['message'] = message
+
+        return render_template('cu_map.html',data=data)
+
+
 
 @app.route("/dashboard.json")
 def dashboard_json():
