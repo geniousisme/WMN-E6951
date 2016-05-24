@@ -73,42 +73,42 @@ login_manager.init_app(app)
 
 builtins.GROUPDATABASE = {'find':{'last_seen':123},'stefangroup':{'last_seen':123}}
 
-class User(flask_login.UserMixin):
-    pass
+# class User(flask_login.UserMixin):
+#     pass
 
-@login_manager.user_loader
-def user_loader(group):
-    if group not in builtins.GROUPDATABASE:
-        pass
+# # @login_manager.user_loader
+# # def user_loader(group):
+# #     if group not in builtins.GROUPDATABASE:
+# #         pass
 
-    user = User()
-    user.id = group
-    return user
-
-
-def groupExists(group):
-    for file in os.listdir("data/"):
-        if file.endswith(".db"):
-            if group + '.db' == file:
-                return True
-    return False
+# #     user = User()
+# #     user.id = group
+# #     return user
 
 
+# def groupExists(group):
+#     for file in os.listdir("data/"):
+#         if file.endswith(".db"):
+#             if group + '.db' == file:
+#                 return True
+#     return False
 
-@login_manager.request_loader
-def request_loader(request):
-    group = request.form.get('group')
-    if not groupExists(group):
-        pass
 
-    user = User()
-    user.id = group
 
-    # DO NOT ever store passwords in plaintext and always compare password
-    # hashes using constant-time comparison!
-    user.is_authenticated = True
+# # @login_manager.request_loader
+# # def request_loader(request):
+# #     group = request.form.get('group')
+# #     if not groupExists(group):
+# #         pass
 
-    return user
+# #     user = User()
+# #     user.id = group
+
+# #     # DO NOT ever store passwords in plaintext and always compare password
+# #     # hashes using constant-time comparison!
+# #     user.is_authenticated = True
+
+#     return user
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -136,10 +136,10 @@ def protected():
     return 'Logged in as: ' + flask_login.current_user.id
 
 
-@app.route('/logout')
-def logout():
-    flask_login.logout_user()
-    return redirect(url_for('login'))
+# @app.route('/logout')
+# def logout():
+#     flask_login.logout_user()
+#     return redirect(url_for('login'))
 
 
 def allowed_file(filename):
@@ -202,28 +202,29 @@ def crossdomain(origin=None, methods=None, headers=None,
 Routes to handle web pages
 """
 
-@app.route("/")
-def landing():
-    try:
-        group = flask_login.current_user.id
-    except:
-        return redirect(url_for('login'))
-    return render_template('index.html',url=builtins.ADDRESS,group=group)
+# @app.route("/")
+# def landing():
+#     try:
+#         group = flask_login.current_user.id
+#     except:
+#         return redirect(url_for('login'))
+#     return render_template('index.html',url=builtins.ADDRESS,group=group)
     
-@app.route('/help/<path:path>')
-def static_proxy(path):
-  if path[-1]=='/':
-      path += 'index.html'
-  return send_from_directory(os.getcwd() + '/libraries/templates/help/', path)
+# @app.route('/help/<path:path>')
+# def static_proxy(path):
+#   if path[-1]=='/':
+#       path += 'index.html'
+#   return send_from_directory(os.getcwd() + '/libraries/templates/help/', path)
 
-@app.route('/help/')
-def static_proxy2():
-  return send_from_directory(os.getcwd() + '/libraries/templates/help/','index.html')
+# @app.route('/help/')
+# def static_proxy2():
+#   return send_from_directory(os.getcwd() + '/libraries/templates/help/','index.html')
 
 @app.route("/dashboard.html")
 def dashboard_html():
     try:
-        group = flask_login.current_user.id
+        # group = flask_login.current_user.id
+        group = "test"
     except:
         return redirect(url_for('login'))
     logger = logging.getLogger('routing-dashboard_data')
@@ -238,10 +239,11 @@ def dashboard_html():
 
         return render_template('dashboard.html',data=data)
 
-@app.route("/classification.html")
+@app.route("/")
 def classification_html():
     try:
-        group = flask_login.current_user.id
+        # group = flask_login.current_user.id
+        group = "test"
     except:
         return redirect(url_for('login'))
     logger = logging.getLogger('routing-classification_html')
@@ -258,28 +260,6 @@ def classification_html():
             data['message'] = message
 
         return render_template('classification.html',data=data)
-
-@app.route("/cu_map.html")
-def cu_map_html():
-    try:
-        group = flask_login.current_user.id
-    except:
-        return redirect(url_for('login'))
-    logger = logging.getLogger('routing-classification_html')
-    if request.method == 'GET':
-        message = request.args.get('message')
-        if message == None:
-            message = 'Logged in as ' + group
-
-        data = {}
-        data['address'] = builtins.ADDRESS
-        data['group'] = group
-        data['locations'] = getAllLocations(group)
-        if len(message)>0:
-            data['message'] = message
-
-        return render_template('cu_map.html',data=data)
-
 
 
 @app.route("/dashboard.json")
@@ -326,80 +306,6 @@ def dashboard_data(group):
         pass
 
     return data
-
-@app.route("/mappingdata.html")
-def mapping_data():
-    """GET /dashboard.html?group=GROUP
-
-    Returns a HTML page compiling the statistics from the databases
-    as well as iframes containing pie charts.
-    """
-    
-    logger = logging.getLogger('routing-mapping_data')
-    if request.method == 'GET':
-        try:
-            group = flask_login.current_user.id
-        except:
-            return redirect(url_for('login'))
-        message = request.args.get('message')
-        if message == None:
-            message = ''
-
-        data = {}
-        data['group'] = group
-        data['address'] = builtins.ADDRESS
-        if len(message)>0:
-            data['message'] = message
-        try:
-            data['gpx'] = submitGPX(group)
-        except:
-            pass
-        
-        try:
-            data['current_gpx_txt'] = open('data/'+group+'.gpx').read()
-        except:
-            pass
-        return render_template('mappingdata.html',group=group,data=data)
-
-@app.route("/map2.html")
-def map2_html():
-    """GET /map2.html?group=GROUP
-
-    Returns a HTML page wiht a map of the current location
-    """
-    try:
-        group = flask_login.current_user.id
-    except:
-        return redirect(url_for('login'))
-    data = {'group':group,'address':builtins.ADDRESS}
-    return render_template('map.html',data=data)
-    
-    
-@app.route("/map.html")
-def map_html():
-    """GET /map.html?group=GROUP
-
-    Returns a HTML page with a map of the current location
-    """
-    logger = logging.getLogger('routing-map_html')
-    try:
-        group = flask_login.current_user.id
-    except:
-        return redirect(url_for('login'))
-    data = {}
-    if request.method == 'GET':
-        try:
-            group = request.args.get('group').lower()
-        except:
-            pass
-    t1 = time.time()
-    data['locations'] = getAllLocations(group)
-    data['group'] = group
-    data['address'] = builtins.ADDRESS
-    print(time.time()-t1)
-    return render_template('map2.html',data=data)
-
-
 
 @app.route("/charts.html")
 def charts_html():
@@ -460,32 +366,6 @@ def pies_simulated_html():
 Routes to handle interaction with the databases
 """
 
-
-'''
-#@app.route('/upload_gpx_file', methods=['GET', 'POST'])
-def upload_file():
-    message = 'Error uploading file.'
-    if request.method == 'POST':
-        file = request.files['file']
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            message = 'File saved successfully.'
-        else:
-            message = 'Wrong format. Needs to be GPX format.'
-    return redirect(url_for('.mapping_data',message=message))
-
-#@app.route('/upload_gpx_text', methods=['GET', 'POST'])
-def upload_gpx_text():
-    message = 'Error uploading text.'
-    if request.method == 'POST':
-        text = request.form['gpxtext']
-        group = request.form['group']
-        with open('data/' + group + '.gpx','w') as f:
-            f.write(text)
-        message = "Successfully updated GPX coordinates."
-    return redirect(url_for('.mapping_data',message=message))
-'''
     
     
 @app.route('/track', methods=['POST', 'GET'])
@@ -749,8 +629,6 @@ def calculating_best():
         calculatePriors(group)
         logger.debug(evaluateAccuracy(group,['test']))        
 
-
-
     return jsonify(resp)
 
 
@@ -779,64 +657,64 @@ def reevaluate():
     return jsonify(results)
 
 
-@app.route("/whereami2")
-@crossdomain(origin='*')
-def get_where_am_i_old():
-    """GET /whereami
+# @app.route("/whereami2")
+# @crossdomain(origin='*')
+# def get_where_am_i_old():
+#     """GET /whereami
 
-    Returns JSON encoding of GPX location of user in group
-    """
-    logger = logging.getLogger('routing-whereami')
-    if request.method == 'GET':  
-        if GENERATE_UNIT_TESTS:
-            payload = {'route':request.path,'method':request.method,'query_string':request.query_string.decode('utf-8')}
-            with open('unit_tests','a') as f:
-                f.write(json.dumps(payload) + '\n')
-        group = request.args.get('group').lower()
-        user = request.args.get('user').lower()
-        try:
-            data = getGPX(group,builtins.fingerprint_cache[group][user][0]['location'])
-        except:
-            logger.debug('Getting /whereami from database')
-            db = mlDB(group)
-            locinfo = db.getLastLocationFromTracking(user)
-            db.close()
-            if locinfo == None:
-                data = getGPX(group,None)
-            else:
-                data = getGPX(group,locinfo['location'])
-    return jsonify(data)
+#     Returns JSON encoding of GPX location of user in group
+#     """
+#     logger = logging.getLogger('routing-whereami')
+#     if request.method == 'GET':  
+#         if GENERATE_UNIT_TESTS:
+#             payload = {'route':request.path,'method':request.method,'query_string':request.query_string.decode('utf-8')}
+#             with open('unit_tests','a') as f:
+#                 f.write(json.dumps(payload) + '\n')
+#         group = request.args.get('group').lower()
+#         user = request.args.get('user').lower()
+#         try:
+#             data = getGPX(group,builtins.fingerprint_cache[group][user][0]['location'])
+#         except:
+#             logger.debug('Getting /whereami from database')
+#             db = mlDB(group)
+#             locinfo = db.getLastLocationFromTracking(user)
+#             db.close()
+#             if locinfo == None:
+#                 data = getGPX(group,None)
+#             else:
+#                 data = getGPX(group,locinfo['location'])
+#     return jsonify(data)
 
-@app.route("/whereami")
-@crossdomain(origin='*')
-def get_where_am_i():
-    """GET /whereami?group=GROUP&user=USER
+# @app.route("/whereami")
+# @crossdomain(origin='*')
+# def get_where_am_i():
+#     """GET /whereami?group=GROUP&user=USER
 
-    Returns location user in group
-    """
-    logger = logging.getLogger('routing-whereami')
-    if request.method == 'GET':  
-        if GENERATE_UNIT_TESTS:
-            payload = {'route':request.path,'method':request.method,'query_string':request.query_string.decode('utf-8')}
-            with open('unit_tests','a') as f:
-                f.write(json.dumps(payload) + '\n')
-        group = request.args.get('group')
-        if group == None:
-            return jsonify({'message':'No group specified','success':False})
-        else:
-            group = group.lower()
-        user = request.args.get('user')
-        data = {}
-        if user is not None:
-            user = user.lower()
-            data = getUserLocations(user,group)
-        else:
-            logger.debug('Getting /whereami from database')
-            db = mlDB(group)
-            users = db.getUsers()
-            db.close()
-            data = getUserLocations(users,group)
-    return jsonify(data)
+#     Returns location user in group
+#     """
+#     logger = logging.getLogger('routing-whereami')
+#     if request.method == 'GET':  
+#         if GENERATE_UNIT_TESTS:
+#             payload = {'route':request.path,'method':request.method,'query_string':request.query_string.decode('utf-8')}
+#             with open('unit_tests','a') as f:
+#                 f.write(json.dumps(payload) + '\n')
+#         group = request.args.get('group')
+#         if group == None:
+#             return jsonify({'message':'No group specified','success':False})
+#         else:
+#             group = group.lower()
+#         user = request.args.get('user')
+#         data = {}
+#         if user is not None:
+#             user = user.lower()
+#             data = getUserLocations(user,group)
+#         else:
+#             logger.debug('Getting /whereami from database')
+#             db = mlDB(group)
+#             users = db.getUsers()
+#             db.close()
+#             data = getUserLocations(users,group)
+#     return jsonify(data)
     
 
 @app.route("/find")
