@@ -3,7 +3,7 @@ Responds to cell phone data and can calculate location classifications
 """
 
 from flask import Flask, request, jsonify, make_response, current_app, render_template, url_for, redirect, send_from_directory, Response
-import flask.ext.login as flask_login
+# import flask.ext.login as flask_login
 from werkzeug import secure_filename
 import logging
 import builtins
@@ -68,78 +68,11 @@ AVAILABLE_DBS = []
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'YOUR_SECRET_KEY'
-login_manager = flask_login.LoginManager()
-login_manager.init_app(app)
+# login_manager = flask_login.LoginManager()
+# login_manager.init_app(app)
 
 builtins.GROUPDATABASE = {'find':{'last_seen':123},'stefangroup':{'last_seen':123}}
 
-# class User(flask_login.UserMixin):
-#     pass
-
-# # @login_manager.user_loader
-# # def user_loader(group):
-# #     if group not in builtins.GROUPDATABASE:
-# #         pass
-
-# #     user = User()
-# #     user.id = group
-# #     return user
-
-
-# def groupExists(group):
-#     for file in os.listdir("data/"):
-#         if file.endswith(".db"):
-#             if group + '.db' == file:
-#                 return True
-#     return False
-
-
-
-# # @login_manager.request_loader
-# # def request_loader(request):
-# #     group = request.form.get('group')
-# #     if not groupExists(group):
-# #         pass
-
-# #     user = User()
-# #     user.id = group
-
-# #     # DO NOT ever store passwords in plaintext and always compare password
-# #     # hashes using constant-time comparison!
-# #     user.is_authenticated = True
-
-#     return user
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'GET':
-        try:
-            group = request.args.get('group').lower()
-            user = User()
-            user.id = group
-            flask_login.login_user(user)
-            return redirect('/')
-        except:
-            return open('libraries/templates/login.html','r').read()
-    if groupExists(request.form['group'].lower()):
-        user = User()
-        user.id = request.form['group'].lower()
-        flask_login.login_user(user)
-        return redirect('/')
-
-    return open('libraries/templates/login_error.html','r').read()
-
-
-@app.route('/protected')
-@flask_login.login_required
-def protected():
-    return 'Logged in as: ' + flask_login.current_user.id
-
-
-# @app.route('/logout')
-# def logout():
-#     flask_login.logout_user()
-#     return redirect(url_for('login'))
 
 
 def allowed_file(filename):
