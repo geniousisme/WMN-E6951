@@ -1,28 +1,30 @@
 {% extends "base.html" %}
 {% block head_scripts %}
         <style>
-
-.location-listing > .row > .col-md-6:nth-child(2n+1) {
-    clear: both;
-}
+        .location-listing > .row > .col-md-6:nth-child(2n+1) {
+            clear: both;
+        }
 
         iframe:focus {
 
-            outline:none;
+            outline: none;
         }
+
         iframe[seamless] {
-            display:block;
+            display: block;
         }
 
         dl {
           width: 100%;
           overflow: hidden;
         }
+
         dt {
           float: left;
           width: 50%;
           /* adjust the width; make sure the total of both is 100% */
         }
+
         dd {
           float: left;
           width: 50%;
@@ -30,17 +32,17 @@
         }
 
         .chartLabel {
-  font: 16px sans-serif;
-  fill: #666;
-}
-.arcLabel {
-  font: 10px sans-serif;
-  fill: #fff;
-}
+            font: 16px sans-serif;
+            fill: #666;
+        }
+        .arcLabel {
+            font: 10px sans-serif;
+            fill: #fff;
+        }
         </style>
 
-    <script src="/static/js/d3.min.js"></script>
-    <script src="/static/js/d3.tip.v0.6.3.js"></script>
+        <script src="/static/js/d3.min.js"></script>
+        <script src="/static/js/d3.tip.v0.6.3.js"></script>
     
 {% endblock %}
 
@@ -61,53 +63,43 @@
 		</div>
 
         <!-- Page Header -->
-        {% if data['message'] %}
-            <div class="row clearfix" id="content-row">
-                <div class="col-xs-12 column">
-                    <div class="center-block">
-                    {% if 'error' in data['message']|lower %}
-                        <p class="bg-danger text-center lead">
-                    {% else %}
-                        <p class="bg-success text-center lead">        
-                    {% endif %}
-                    {{ data['message'] }}
-                    </p>
-                    </div>
-                </div>
-            </div>
-        {% endif %}
 
     <div class="row clearfix" id="content-row">
         <div class="col-xs-12 column">
             <h3>Current positions</h3>
         </div>
     </div>
-    <div id="map" style="height: 600px; width: 80%;"></div>
+    <div id="map" style="height: 600px; width: 80%;">
+    </div>
     <script>
+
             var location_cord_hash = {
-                'Science and Engineering Library': [40.810055, -73.962005],
-                'Pupin Hall': [40.810050, -73.961360],
-                'Joe Caffe': [40.810263, -73.961835],
-                'Schapiro Center for Engineering and Physical Science Research': [40.809627, -73.960819],
-                'Davis Auditorium': [40.809563, -73.960734],
-                'Mudd Building': [40.809318, -73.959900],
-                'CS Department': [40.809011, -73.959790],
-                'Engineering Terrace Garage': [40.808877, -73.959949],
-                'Columbia Business School': [40.809005, -73.961248],
-                'Uris Hall': [40.808926, -73.961360],
-                'Butler Library': [40.806396, -73.963218],
-                'Lerner Hall': [40.806999, -73.964025],
+                'science and engineering library': [40.810055, -73.962005],
+                'pupin hall': [40.810050, -73.961360],
+                'joe caffe': [40.810263, -73.961835],
+                'schapiro center for engineering and physical science research': [40.809627, -73.960819],
+                'davis auditorium': [40.809563, -73.960734],
+                'mudd building': [40.809318, -73.959900],
+                'cs department': [40.809011, -73.959790],
+                'engineering terrace garage': [40.808877, -73.959949],
+                'columbia business school': [40.809005, -73.961248],
+                'uris hall': [40.808926, -73.961360],
+                'butler library': [40.806396, -73.963218],
+                'lerner hall': [40.806999, -73.964025],
                 'unknown': [40.807544, -73.962583]
             };
+            
             var locations = [];
+            
             {% for user in data['locations'] %}
                 var usr_location_hash = {};
                 usr_location_hash["usr_name"] = '{{ user }}';
                 usr_location_hash["usr_location_name"] = '{{ data["locations"][user]["location"] }}';
-                usr_location_hash["usr_location_cord"] = location_cord_hash['{{ data["locations"][user]["location"] }}'.split(" - ")[0]];
+                usr_location_hash["usr_location_cord"] = location_cord_hash['{{ data["locations"][user]["location"] }}'.split(" - ")[0].toLowerCase()];
                 usr_location_hash["usr_last_seen"] = '{{ data["locations"][user]["time"] }}';
                 locations.push(usr_location_hash);
             {% endfor %}
+            
             console.log(locations);
 
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -134,12 +126,10 @@
                                 "<p>Location: " + locations[i]["usr_location_name"] + "</p>" +
                                 "<p>Last seen: " + locations[i]["usr_last_seen"] + "</p>";
 
-                  // infowindow.setContent(locations[i]["usr_location_name"]);
                   infowindow.setContent(content);
                   infowindow.open(map, marker);
                 }
               })(marker, i));
-              // infowindow.open(map, marker)(marker, i);
             }
     </script>                    
     <script>
