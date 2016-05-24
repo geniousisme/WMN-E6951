@@ -83,3 +83,6 @@ nohup.out
 
 # Temp files
 *~
+
+# server config file
+settings.cfg
