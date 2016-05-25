@@ -1,14 +1,10 @@
 #FIndMe @ CU !!
 
 - [Requirements](#requirements)
-- [Server setup](#server-setup)
 - [Using FIND](#using-find)
   - [1. Fingerprint locations](#1-fingerprint-locations)
   - [2. Analyze fingerprints](#2-analyze-fingerprints)
   - [3. Track locations](#3-track-locations)
-
-- [Screenshots](#screenshots)
-- [Contact us](#contact-us)
 
 **The Framework for Internal Navigation and Discovery** (_FIND_) allows you to use your smartphone or laptop to determine your position within your home or office. You can easily use this system in place of motion sensors as its resolution will allow your phone to distinguish whether you are in the living room, the kitchen or the bedroom, etc. The position information can then be used in a variety of ways including home automation, way-finding, or tracking!
 <blockquote>Simply put, FIND will allow you to replace <em>tons</em> of motion sensors with a <em>single</em> smartphone!</blockquote>
@@ -23,35 +19,6 @@ To use this system you need to have the following
 - Python3 installed
 - Either WiFi capable laptop or Android smartphone
 - (Optional) Android Studio installed ([in case you want to build the app yourself](https://www.internalpositioning.com/guide/deploy/#building-android-app))
-
-# Server setup
-_Note: you don't have to setup a server at all. If you'd like, you can use [our demo server](http://finddemo.duckdns.org) - simply [follow the quickstart guide](https://www.internalpositioning.com/guide/getting-started/) to get going._
-
-Installation is very simple. Simply download the latest source code:
-
-```
-git clone https://github.com/schollz/find.git
-cd find/
-sudo python3 setup.py
-```
-
-and then install:
-
-_Note: when you run the installation you will be downloading binaries containing the classification (stored in [releases](https://github.com/schollz/find/releases)). This is the only part of the code that is not open. The classification algorithm is compiled in an attempt to obfuscate how it works. Even though the algorithm is solely and unequivocally my own original creation, there are currently tons of patents being submitted about Wifi-based positioning. I don't want to be responsible for possibly causing people to accidentally infringe on patent-holders, so I opted to make it more difficult for a patent holder to find my exact implementation. I suppose I could check all the patents to make sure I'm not infringing, but I rather stay ignorant to what they've done in order to better my case that mine is an original work._
-
-```
-sudo python3 setup.py
-```
-
-After which you will be prompted to enter the `address` and `port` of your server. If you want to run on a home network run `ifconfig` to check your address (it will be something like `192.168.X.Y` usually). If you want to use an public address you can also use that. Note: if you are using a reverse proxy you can also set the `external address`, but if not, you can just leave that blank.
-
-To run **FIND** simply use:
-
-```
-python3 server.py
-```
-
-To actually use the system you will need a fingerprinting device. The easiest thing to do is to use [our app from Google Play](https://play.google.com/store/apps/details?id=com.hcp.find&hl=en) or [build the app yourself](https://www.internalpositioning.com/guide/deploy/#building-android-app). Alternatively, you don't have to build an app at all and can simply use your laptop via the [the fingerprinting program](https://github.com/schollz/find/blob/master/computer/fingerprinting.py), more details [here](https://www.internalpositioning.com/guide/deploy/#laptop-computer).
 
 # Using FIND
 ## 1. Fingerprint locations
